@@ -16,15 +16,20 @@ namespace ConsoleAppProject.App01
 
         public void Run()
         {
-        
+            InputMiles();
+            CalculateFeet();
+            OutputFeet();
         }
+
         /// <Summary>
         /// Prompts user for Input value in Miles
         /// Input value for Miles as a double number
         ///</Summary>
         private void InputMiles()
         {
-
+            Console.Write("Please enter the number of Miles > ");
+            string miles = Console.ReadLine();
+            Miles = Convert.ToDouble(miles);
         }
         /// <Summary>
         /// Applies multiplier for conversion of Miles to Feet
