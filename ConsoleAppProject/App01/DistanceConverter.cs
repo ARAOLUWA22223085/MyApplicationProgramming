@@ -14,7 +14,7 @@ namespace ConsoleAppProject.App01
         private double Miles;
         private double Feet;
 
-        private int Multiplier = 5280;
+        private double Multiplier = 5280;
 
         /// <Summary>
         /// Runs the appropriate classes
@@ -49,9 +49,8 @@ namespace ConsoleAppProject.App01
         private void OutputFeet()
         {
             Console.WriteLine();
-            Console.Write("The converted Lenglth is; ");
+            Console.Write("The converted Length is; ");
             Console.Write(Feet + " feet");
-            Console.WriteLine();
             Console.WriteLine();
 
         }
