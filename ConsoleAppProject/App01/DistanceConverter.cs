@@ -6,7 +6,7 @@ namespace ConsoleAppProject.App01
     /// Please describe the main features of this App
     /// </summary>
     /// <author>
-    /// Derek version 0.1
+    /// Araoluwa  version 0.1
     /// </author>
     public class DistanceConverter
     {
@@ -14,6 +14,11 @@ namespace ConsoleAppProject.App01
         private double Miles;
         private double Feet;
 
+        private int Multiplier = 5280;
+
+        /// <Summary>
+        /// Runs the appropriate classes
+        ///</Summary>
         public void Run()
         {
             InputMiles();
@@ -35,16 +40,21 @@ namespace ConsoleAppProject.App01
         /// Applies multiplier for conversion of Miles to Feet
         ///</Summary>
         private void CalculateFeet()
-            {
-
-            }
+        {
+            Feet = Miles * Multiplier;
+        }
         /// <Summary>
         /// Outputs the converted value now in Feet
         ///</Summary>
         private void OutputFeet()
-            {
+        {
+            Console.WriteLine();
+            Console.Write("The converted Lenglth is; ");
+            Console.Write(Feet + " feet");
+            Console.WriteLine();
+            Console.WriteLine();
 
-            }
-        
+        }
+
     }
 }
