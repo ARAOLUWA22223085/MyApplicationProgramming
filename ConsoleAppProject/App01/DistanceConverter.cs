@@ -12,13 +12,13 @@ namespace ConsoleAppProject.App01
     public class DistanceConverter
     {
         public const double MilesToFeetMultiplier = 5280;
-        public const double MilesToMetresMultiplier = 5280;
-        public const double FeetToMilesMultiplier = 5280;
-        public const double FeetToMetresMultiplier = 5280;
-        public const double MetresToFeetMultiplier = 5280;
-        public const double MetresToMilesMultiplier = 5280;
+        public const double MilesToMetresMultiplier = 1609.34;
+        public const double FeetToMilesMultiplier = 0.000189394;
+        public const double FeetToMetresMultiplier = 0.3048;
+        public const double MetresToFeetMultiplier = 3.28084;
+        public const double MetresToMilesMultiplier = 0.000621371;
 
-        private double conversion;
+        private double conversion = 0;
 
         private double Miles;
         private double Feet;
@@ -68,10 +68,13 @@ namespace ConsoleAppProject.App01
             Console.Write("Please select the number corresponding to the conversion type required > ");
             Console.WriteLine();
 
-            double conversion = Console.Read();
+            string Conversion = Console.ReadLine();
+            conversion = Convert.ToDouble(Conversion);
+            Thread.Sleep(1000);
 
             if (conversion == 1)
             {
+                Console.WriteLine();
                 Console.WriteLine("Miles to Feet");
                 InputMiles();
                 CalculateMilesToFeet();
@@ -80,6 +83,7 @@ namespace ConsoleAppProject.App01
 
             else if (conversion == 2)
             {
+                Console.WriteLine();
                 Console.WriteLine("Miles to Metres");
                 InputMiles();
                 CalculateMilesToMetres();
@@ -88,6 +92,7 @@ namespace ConsoleAppProject.App01
 
             else if (conversion == 3)
             {
+                Console.WriteLine();
                 Console.WriteLine("Feet to Miles");
                 InputFeet();
                 CalculateFeetToMiles();
@@ -96,6 +101,7 @@ namespace ConsoleAppProject.App01
 
             else if (conversion == 4)
             {
+                Console.WriteLine();
                 Console.WriteLine("Feet to Metres");
                 InputFeet();
                 CalculateFeetToMetres();
@@ -104,6 +110,7 @@ namespace ConsoleAppProject.App01
 
             else if (conversion == 5)
             {
+                Console.WriteLine();
                 Console.WriteLine("Metres to Feet");
                 InputMetres();
                 CalculateMetresToFeet();
@@ -112,17 +119,27 @@ namespace ConsoleAppProject.App01
 
             else if (conversion == 6)
             {
+                Console.WriteLine();
                 Console.WriteLine("Metres to Miles");
                 InputMetres();
                 CalculateMetresToMiles();
                 MetresToMiles();
             }
 
+
+            else if (conversion == 0)
+            {
+                Console.WriteLine();
+                Console.WriteLine("Metres to Miles");
+                InputMetres();
+                CalculateMetresToMiles();
+                MetresToMiles();
+            }
             else
             {
                 Console.WriteLine("Please input a valid number!");
-/*                Thread.Sleep(1500);
-                ConversionType();*/
+                Thread.Sleep(1500);
+                ConversionType();
 
             }
         }
@@ -205,6 +222,7 @@ namespace ConsoleAppProject.App01
             Console.Write("The converted Length is; ");
             Console.Write(OutputMilesToFeet + " feet");
             Console.WriteLine();
+            Console.WriteLine();
 
         }
         private void MilesToMetres()
@@ -212,6 +230,7 @@ namespace ConsoleAppProject.App01
             Console.WriteLine();
             Console.Write("The converted Length is; ");
             Console.Write(OutputMilesToMetres + " metres");
+            Console.WriteLine();
             Console.WriteLine();
 
         }
@@ -221,6 +240,7 @@ namespace ConsoleAppProject.App01
             Console.Write("The converted Length is; ");
             Console.Write(OutputFeetToMetres + " metres");
             Console.WriteLine();
+            Console.WriteLine();
 
         }
         private void FeetToMiles()
@@ -228,6 +248,7 @@ namespace ConsoleAppProject.App01
             Console.WriteLine();
             Console.Write("The converted Length is; ");
             Console.Write(OutputFeetToMiles + " miles");
+            Console.WriteLine();
             Console.WriteLine();
 
         }
@@ -237,6 +258,8 @@ namespace ConsoleAppProject.App01
             Console.Write("The converted Length is; ");
             Console.Write(OutputMetresToFeet + " feet");
             Console.WriteLine();
+            Console.WriteLine();
+
 
         }
         private void MetresToMiles()
@@ -244,6 +267,7 @@ namespace ConsoleAppProject.App01
             Console.WriteLine();
             Console.Write("The converted Length is; ");
             Console.Write(OutputMetresToMiles + " miles");
+            Console.WriteLine();
             Console.WriteLine();
 
         }
