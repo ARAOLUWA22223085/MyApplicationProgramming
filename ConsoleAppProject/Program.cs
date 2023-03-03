@@ -27,11 +27,11 @@ namespace ConsoleAppProject
             Console.WriteLine();
 
 
-/*            DistanceConverter converter = new DistanceConverter();
-            converter.Run();*/
+            /*            DistanceConverter converter = new DistanceConverter();
+                        converter.Run();*/
 
-            BMI bmi = new BMI();
-            bmi.run();
+            BMICalculator bmi = new BMICalculator();
+            bmi.Run();
         }
     }
 }

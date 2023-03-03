@@ -10,10 +10,11 @@ namespace ConsoleAppProject.App02
     /// <author>
     /// Araoluwa Olatunji version 0.1
     /// </author>
-    public class BMI
+    public class BMICalculator
     {
+        public double bmi;
 
-        public void run()
+        public void Run()
         {
             Console.WriteLine();
             Console.WriteLine("welcome to Ara's advanced BMI calculator!");
@@ -52,10 +53,11 @@ namespace ConsoleAppProject.App02
                 Console.WriteLine("Please Input a valid instruction!");
                 Console.WriteLine();
                 Thread.Sleep(1000);
-                run();
+                Run();
             }
         
         }
+
         private void Imperial()
         {
             Console.WriteLine();
@@ -66,14 +68,16 @@ namespace ConsoleAppProject.App02
             double HeightInches = Convert.ToDouble(Console.ReadLine());
 
             double BMI = WeightLbs / (HeightInches * HeightInches) * 703;
+            bmi = Convert.ToDouble(BMI);
 
             Console.WriteLine("Your BMI is " + BMI + ".");
-            Console.WriteLine();
+/*            BMIIndicator();
+*/            Console.WriteLine();
             Console.WriteLine();
             Console.WriteLine();
             Console.WriteLine();
             Thread.Sleep(1000);
-            run();
+            Run();
         }
 
         private void Metric()
@@ -87,13 +91,35 @@ namespace ConsoleAppProject.App02
             double BMI = WeightKg / (HeightM * HeightM);
 
             Console.WriteLine("Your BMI is " + BMI + ".");
-            Console.WriteLine();
+/*            BMIIndicator();
+*/            Console.WriteLine();
             Console.WriteLine();
             Console.WriteLine();
             Console.WriteLine();
             Thread.Sleep(1000);
-            run();
+            Run();
         }
+/*        private void BMIIndicator()
+        {
+            if (bmi > 30)
+            {
+                Console.WriteLine("you're in the obese range");
+            }
 
+            else if (30 > bmi)
+            {
+                Console.WriteLine("you're in the overweight range");
+            }
+
+            else if (24.9 > bmi)
+            {
+                Console.WriteLine("you're in the healthy weight range");
+            }
+
+            else if(18.5 > bmi)
+            {
+                Console.WriteLine("you're in the underweight range");
+            }
+        }*/
     }
 }
