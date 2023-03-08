@@ -161,6 +161,11 @@ namespace ConsoleAppProject.App01
             Console.Write("Please enter the number of Miles > ");
             string miles = Console.ReadLine();
             Miles = Convert.ToDouble(miles);
+            if (Miles < 0)
+            {
+                Console.WriteLine("Please Input a Valid Number!");
+                InputMiles();
+            }
         }
 
         private void InputMetres()
@@ -168,6 +173,12 @@ namespace ConsoleAppProject.App01
             Console.Write("Please enter the number of Metres > ");
             string metres = Console.ReadLine();
             Metres = Convert.ToDouble(metres);
+
+            if (Metres < 0)
+            {
+                Console.WriteLine("Please Input a Valid Number!");
+                InputMetres();
+            }
         }
 
         private void InputFeet()

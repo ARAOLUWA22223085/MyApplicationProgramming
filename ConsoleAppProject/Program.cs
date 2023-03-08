@@ -27,11 +27,43 @@ namespace ConsoleAppProject
             Console.WriteLine();
 
 
-            /*            DistanceConverter converter = new DistanceConverter();
-                        converter.Run();*/
+            Console.WriteLine();
+            Console.WriteLine("What would you like to do?");
+            Console.WriteLine();
+            Console.WriteLine("1. Distance Converter");
+            Console.WriteLine();
+            Console.WriteLine("2. BMI Calculator");
+            Console.WriteLine();
 
+            double Selection = Convert.ToDouble(Console.ReadLine());
+
+            DistanceConverter converter = new DistanceConverter();
             BMICalculator bmi = new BMICalculator();
-            bmi.Run();
+
+
+            if (Selection == 1)
+            {
+                converter.Run();
+            }
+
+            else if (Selection == 2)
+            {
+                bmi.Run();
+            }
+            
+            else
+            {
+                Console.WriteLine("Please input a valid instruction!");
+                Console.WriteLine();
+                Console.WriteLine();
+                Console.WriteLine();
+                Console.WriteLine();
+                Console.WriteLine();
+                Console.WriteLine();
+                Console.WriteLine();
+
+            }
+
         }
     }
 }

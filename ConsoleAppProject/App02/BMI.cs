@@ -12,7 +12,7 @@ namespace ConsoleAppProject.App02
     /// </author>
     public class BMICalculator
     {
-        public double bmi;
+        private double BMI;
 
         public void Run()
         {
@@ -55,9 +55,11 @@ namespace ConsoleAppProject.App02
                 Thread.Sleep(1000);
                 Run();
             }
+
+
         
         }
-
+        //runs the BMI calculations based on the units chosen
         private void Imperial()
         {
             Console.WriteLine();
@@ -66,13 +68,19 @@ namespace ConsoleAppProject.App02
             Console.WriteLine();
             Console.WriteLine("Please input your Height in Inches");
             double HeightInches = Convert.ToDouble(Console.ReadLine());
-
+            if (WeightLbs < 0 || HeightInches < 0)
+            {
+                Console.WriteLine("Please input a valid Weight or Height!");
+                Console.WriteLine("");
+                Console.WriteLine("");
+                Console.WriteLine("");
+                Imperial();
+            }
             double BMI = WeightLbs / (HeightInches * HeightInches) * 703;
-            bmi = Convert.ToDouble(BMI);
 
             Console.WriteLine("Your BMI is " + BMI + ".");
-/*            BMIIndicator();
-*/            Console.WriteLine();
+            BMIIndicator();
+            Console.WriteLine();
             Console.WriteLine();
             Console.WriteLine();
             Console.WriteLine();
@@ -88,38 +96,52 @@ namespace ConsoleAppProject.App02
             Console.WriteLine("Please input your Height in M");
             double HeightM = Convert.ToDouble(Console.ReadLine());
 
+            if (WeightKg < 0 || HeightM < 0)
+            {
+                Console.WriteLine("Please input a valid Weight or Height!");
+                Console.WriteLine("");
+                Console.WriteLine("");
+                Console.WriteLine("");
+                Metric();
+            }
+
             double BMI = WeightKg / (HeightM * HeightM);
 
             Console.WriteLine("Your BMI is " + BMI + ".");
-/*            BMIIndicator();
-*/            Console.WriteLine();
+            BMIIndicator();
+            Console.WriteLine();
             Console.WriteLine();
             Console.WriteLine();
             Console.WriteLine();
             Thread.Sleep(1000);
             Run();
         }
-/*        private void BMIIndicator()
+        //informs on the state of the users health based on their BMI
+        private void BMIIndicator()
         {
-            if (bmi > 30)
+            if (BMI > 30)
             {
-                Console.WriteLine("you're in the obese range");
+                Console.WriteLine();
+                Console.WriteLine("You're in the obese range");
             }
 
-            else if (30 > bmi)
+            else if ((BMI < 29.9) && (25 < BMI))
             {
-                Console.WriteLine("you're in the overweight range");
+                Console.WriteLine();
+                Console.WriteLine("You're in the overweight range");
             }
 
-            else if (24.9 > bmi)
+            else if ((BMI < 24.9) && (18.5 < BMI))
             {
-                Console.WriteLine("you're in the healthy weight range");
+                Console.WriteLine();
+                Console.WriteLine("You're in the healthy weight range");
             }
 
-            else if(18.5 > bmi)
+            else if (BMI < 18.5)
             {
-                Console.WriteLine("you're in the underweight range");
+                Console.WriteLine();
+                Console.WriteLine("You're in the underweight range");
             }
-        }*/
+        }
     }
 }
